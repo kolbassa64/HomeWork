@@ -1,10 +1,18 @@
 function exchange(amount, from, to) {
-    const roubleRate = [85, 92, 0.2, 12, 62 ]; // округлил
-    [usd, eur, amd, dkk, cad ]= roubleRate;
-    if ( roubleRate.indexOf(from) === -1 || roubleRate.indexOf(to) === -1) {
-        return NaN; /* оке, я пробовал проверять на typeof === 'undefined', и это не сработало. Так что оно в целом не работает с неопределенными
-    переменными, и я не нашел решения этому(может плохо искал?). Так же передача значения одной из переменных не возвращает NaN, вроде и работает, 
-    но мне кажется от этого могут быть проблемы, нужно подумать. Возможно изначально нужно было заходиь с другой стороны */  
-  }
-    return (from/to) * amount;
+    const roubleRate = [85, 92, 0.2, 12, 62 ];
+    [usd, eur, amd, dkk , cad ]= roubleRate;
+    switch (from) {
+        case 'usd':
+            return (from / to) * amount;
+        case 'eur':
+            return (from / to) * amount;
+        case 'amd':
+            return (from / to) * amount;
+        case 'dkk':
+            return (from / to) * amount;
+        case 'cad':
+            return (from / to) * amount;
+        default:
+            return NaN;
+    }
 }
